@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-title>Cadastro de Cuidado</mat-card-title>
+    <mat-card-content>
+      <input formControlName="id" required hidden>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Nome do Cuidado</mat-label>
+        <input matInput formControlName="nomeCuidado" required>
+        <mat-error >
+          Campo obrigatório
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput formControlName="descricao"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Frequência</mat-label>
+        <input matInput formControlName="frequencia" required>
+        <mat-error>
+          Campo obrigatório
+        </mat-error>
+      </mat-form-field>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Salvar</button>
+      <button mat-flat-button type="button" routerLink="/Cuidado" routerLinkActive="router-link-active" rLink="/Cuidado" routerLinkActive="router-link-active" >Voltar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
